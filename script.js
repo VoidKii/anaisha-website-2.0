@@ -1,12 +1,18 @@
-/* =========================================
-   ENTER SCREEN
-========================================= */
+/* =========================
+   ELEMENTS
+========================= */
 
 const enterScreen = document.getElementById("enter-screen");
 const music = document.getElementById("music");
 const musicButton = document.getElementById("music-button");
+const particles = document.getElementById("particles");
 
 let musicPlaying = false;
+
+
+/* =========================
+   ENTER SCREEN
+========================= */
 
 enterScreen.addEventListener("click", async () => {
 
@@ -21,17 +27,19 @@ enterScreen.addEventListener("click", async () => {
             '<i class="fa-solid fa-volume-high"></i>';
 
     } catch (error) {
-        console.log("Music could not autoplay.");
+        console.log("Music could not start:", error);
     }
 
 });
 
 
-/* =========================================
+/* =========================
    MUSIC BUTTON
-========================================= */
+========================= */
 
-musicButton.addEventListener("click", async () => {
+musicButton.addEventListener("click", async (event) => {
+
+    event.stopPropagation();
 
     if (musicPlaying) {
 
@@ -55,7 +63,7 @@ musicButton.addEventListener("click", async () => {
 
         } catch (error) {
 
-            console.log("Music could not play.");
+            console.log("Music could not start:", error);
 
         }
 
@@ -64,125 +72,137 @@ musicButton.addEventListener("click", async () => {
 });
 
 
-/* =========================================
+/* =========================
+   PARTICLES
+========================= */
+
+function createParticles() {
+
+    for (let i = 0; i < 35; i++) {
+
+        const particle = document.createElement("span");
+
+        particle.className = "particle";
+
+        particle.style.left =
+            Math.random() * 100 + "%";
+
+        particle.style.animationDuration =
+            (8 + Math.random() * 12) + "s";
+
+        particle.style.animationDelay =
+            Math.random() * 10 + "s";
+
+        particle.style.opacity =
+            0.15 + Math.random() * 0.35;
+
+        const size =
+            1 + Math.random() * 2;
+
+        particle.style.width = size + "px";
+        particle.style.height = size + "px";
+
+        particles.appendChild(particle);
+    }
+
+}
+
+createParticles();
+
+
+/* =========================
+   DISCORD CONNECTION
+========================= */
+
+const params =
+    new URLSearchParams(window.location.search);
+
+if (params.get("discord") === "connected") {
+
+    const button =
+        document.getElementById("discord-button");
+
+    const text =
+        document.getElementById("discord-text");
+
+    const status =
+        document.getElementById("discord-status");
+
+    text.textContent = "its.anaisha ♡";
+
+    status.style.display = "block";
+
+    button.classList.add("connected");
+
+    window.history.replaceState(
+        {},
+        document.title,
+        window.location.pathname
+    );
+
+}
+
+
+/* =========================
+   VIEW COUNTER
+========================= */
+
+/*
+   Simple local counter.
+
+   Each browser keeps its own count.
+   This does NOT create a global public
+   view counter yet.
+*/
+
+let views =
+    Number(localStorage.getItem("anaisha_views") || 0);
+
+views++;
+
+localStorage.setItem(
+    "anaisha_views",
+    views
+);
+
+document.getElementById("views").textContent =
+    views;
+
+
+/* =========================
    YEAR
-========================================= */
+========================= */
 
 document.getElementById("year").textContent =
     new Date().getFullYear();
 
 
-/* =========================================
-   FAKE VIEW COUNTER
-========================================= */
-
-const viewsElement = document.getElementById("views");
-
-let views = localStorage.getItem("anaisha_views");
-
-if (!views) {
-    views = Math.floor(Math.random() * 30) + 1;
-} else {
-    views = Number(views) + 1;
-}
-
-localStorage.setItem("anaisha_views", views);
-
-viewsElement.textContent = views;
-
-
-/* =========================================
-   FLOATING PARTICLES
-========================================= */
-
-const particlesContainer =
-    document.getElementById("particles");
-
-function createParticle() {
-
-    const particle =
-        document.createElement("div");
-
-    particle.classList.add("particle");
-
-    const size =
-        Math.random() * 3 + 1;
-
-    const left =
-        Math.random() * 100;
-
-    const duration =
-        Math.random() * 10 + 8;
-
-    const delay =
-        Math.random() * 5;
-
-    particle.style.width = `${size}px`;
-    particle.style.height = `${size}px`;
-
-    particle.style.left = `${left}%`;
-
-    particle.style.animationDuration =
-        `${duration}s`;
-
-    particle.style.animationDelay =
-        `${delay}s`;
-
-    particlesContainer.appendChild(particle);
-
-    setTimeout(() => {
-        particle.remove();
-    }, (duration + delay) * 1000);
-
-}
-
-
-/* Create particles */
-
-for (let i = 0; i < 35; i++) {
-    createParticle();
-}
-
-
-/* Keep creating them */
-
-setInterval(() => {
-    createParticle();
-}, 700);
-
-
-/* =========================================
-   CARD MOUSE GLOW
-========================================= */
+/* =========================
+   CARD MOUSE EFFECT
+========================= */
 
 const card =
     document.querySelector(".profile-card");
 
 document.addEventListener("mousemove", (event) => {
 
-    const rect =
-        card.getBoundingClientRect();
+    if (window.innerWidth < 700) return;
 
     const x =
-        event.clientX - rect.left;
+        (event.clientX / window.innerWidth - 0.5) * 4;
 
     const y =
-        event.clientY - rect.top;
+        (event.clientY / window.innerHeight - 0.5) * 4;
 
-    card.style.background = `
-        radial-gradient(
-            circle at ${x}px ${y}px,
-            rgba(255,255,255,0.08),
-            rgba(10,10,14,0.68) 35%
-        )
-    `;
+    card.style.transform =
+        `perspective(1000px) rotateY(${x}deg) rotateX(${-y}deg)`;
 
 });
 
 
 document.addEventListener("mouseleave", () => {
 
-    card.style.background =
-        "rgba(10,10,14,0.68)";
+    card.style.transform =
+        "perspective(1000px) rotateY(0deg) rotateX(0deg)";
 
 });
