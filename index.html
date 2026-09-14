@@ -1,149 +1,394 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
 
     <title>♡ Anaisha</title>
 
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet"
+          href="style.css">
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="preconnect"
+          href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+          rel="stylesheet">
 
     <link rel="stylesheet"
           href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
 </head>
+
 
 <body>
 
-    <!-- Background -->
-    <div class="background"></div>
-    <div class="overlay"></div>
 
-    <!-- Click to enter -->
-    <div id="enter-screen">
-        <div class="enter-content">
-            <div class="enter-icon">♡</div>
-            <h1>click to enter</h1>
-            <p>♡ welcome to my profile</p>
+<!-- =========================================================
+     BACKGROUND
+========================================================= -->
+
+<div class="background"></div>
+
+<div class="overlay"></div>
+
+
+<!-- =========================================================
+     ENTER SCREEN
+========================================================= -->
+
+<div id="enter-screen">
+
+    <div class="enter-content">
+
+        <div class="enter-icon">
+            ♡
         </div>
+
+        <h1>
+            click to enter
+        </h1>
+
+        <p>
+            ♡ welcome to my profile
+        </p>
+
     </div>
 
-    <!-- Main -->
-    <main class="page">
+</div>
 
-        <section class="profile-card">
 
-            <!-- Avatar -->
-            <div class="avatar-wrapper">
-                <img src="avatar.gif" alt="Anaisha" class="avatar">
-                <div class="online-dot"></div>
-            </div>
+<!-- =========================================================
+     MAIN PROFILE
+========================================================= -->
 
-            <!-- Name -->
-            <h1 class="username">
-                ~ ♡ Anaisha ﹒‹𝟹
-            </h1>
+<main class="page">
 
-            <p class="handle">
-                @its.anaisha
+
+    <section class="profile-card">
+
+
+        <!-- AVATAR -->
+
+        <div class="avatar-wrapper">
+
+            <img
+                src="avatar.gif"
+                alt="Anaisha"
+                class="avatar"
+            >
+
+            <div class="online-dot"></div>
+
+        </div>
+
+
+        <!-- NAME -->
+
+        <h1 class="username">
+            ~ ♡ Anaisha ﹒‹𝟹
+        </h1>
+
+
+        <!-- HANDLE -->
+
+        <p class="handle">
+            @its.anaisha
+        </p>
+
+
+        <!-- BIO -->
+
+        <div class="bio">
+
+            <p>
+                ୨ৎ not everyone's cup of tea
             </p>
 
-            <!-- Bio -->
-            <div class="bio">
-                <p>୨ৎ not everyone's cup of tea</p>
-                <p>♡ creating my own little world</p>
-            </div>
+            <p>
+                ♡ creating my own little world
+            </p>
 
-            <!-- Location -->
-            <div class="location">
-                <i class="fa-solid fa-location-dot"></i>
-                India
-            </div>
+        </div>
 
-            <!-- Social buttons -->
-            <div class="socials">
 
-                <!-- My Discord Profile -->
-                <a href="https://discord.com/users/1399017484010655825"
-                   target="_blank"
-                   class="social discord">
-                    <i class="fa-brands fa-discord"></i>
-                    <span>its.anaishaa</span>
-                </a>
+        <!-- LOCATION -->
 
-                <!-- Roblox -->
-                <a href="https://www.roblox.com/"
-                   target="_blank"
-                   class="social roblox">
-                    <i class="fa-solid fa-gamepad"></i>
-                    <span>Roblox</span>
-                </a>
+        <div class="location">
 
-                <!-- GitHub -->
-                <a href="#"
-                   class="social">
-                    <i class="fa-brands fa-github"></i>
-                    <span>GitHub</span>
-                </a>
+            <i class="fa-solid fa-location-dot"></i>
 
-            </div>
+            India
 
-            <!-- Stats -->
-            <div class="stats">
+        </div>
 
-                <div class="stat">
-                    <span class="stat-number" id="views">0</span>
-                    <span class="stat-label">Views</span>
-                </div>
 
-                <div class="stat">
-                    <span class="stat-number">♡</span>
-                    <span class="stat-label">Status</span>
-                </div>
+        <!-- =================================================
+             SOCIALS
+        ================================================== -->
 
-                <div class="stat">
-                    <span class="stat-number">14</span>
-                    <span class="stat-label">UID</span>
-                </div>
+        <div class="socials">
 
-            </div>
 
-            <!-- Divider -->
-            <div class="divider"></div>
+            <!-- DISCORD OAUTH -->
 
-            <!-- Bottom -->
-            <div class="footer">
+            <a
+                href="https://anaisha-discord-auth.onrender.com/login"
+                class="social discord"
+                id="discord-button"
+            >
 
-                <span>
-                    made with <span class="heart">♡</span>
+                <i class="fa-brands fa-discord"></i>
+
+                <span id="discord-text">
+                    Connect Discord
                 </span>
 
+            </a>
+
+
+            <!-- ROBLOX -->
+
+            <a
+                href="https://www.roblox.com/"
+                target="_blank"
+                class="social roblox"
+            >
+
+                <i class="fa-solid fa-gamepad"></i>
+
                 <span>
-                    © <span id="year"></span> Anaisha
+                    Roblox
+                </span>
+
+            </a>
+
+
+            <!-- GITHUB -->
+
+            <a
+                href="#"
+                class="social"
+            >
+
+                <i class="fa-brands fa-github"></i>
+
+                <span>
+                    GitHub
+                </span>
+
+            </a>
+
+
+        </div>
+
+
+        <!-- =================================================
+             DISCORD STATUS
+        ================================================== -->
+
+        <div
+            id="discord-status"
+            style="
+                display:none;
+                margin-top:12px;
+                font-size:13px;
+                opacity:0.8;
+            "
+        >
+
+            ♡ Discord connected
+
+        </div>
+
+
+        <!-- =================================================
+             STATS
+        ================================================== -->
+
+        <div class="stats">
+
+
+            <div class="stat">
+
+                <span
+                    class="stat-number"
+                    id="views"
+                >
+                    0
+                </span>
+
+                <span class="stat-label">
+                    Views
                 </span>
 
             </div>
 
-        </section>
 
-    </main>
+            <div class="stat">
 
-    <!-- Music -->
-    <audio id="music" loop>
-        <source src="music.mp3" type="audio/mpeg">
-    </audio>
+                <span class="stat-number">
+                    ♡
+                </span>
 
-    <button id="music-button" class="music-button">
-        <i class="fa-solid fa-volume-xmark"></i>
-    </button>
+                <span class="stat-label">
+                    Status
+                </span>
 
-    <!-- Particles -->
-    <div id="particles"></div>
+            </div>
 
-    <script src="script.js"></script>
+
+            <div class="stat">
+
+                <span class="stat-number">
+                    14
+                </span>
+
+                <span class="stat-label">
+                    UID
+                </span>
+
+            </div>
+
+
+        </div>
+
+
+        <!-- DIVIDER -->
+
+        <div class="divider"></div>
+
+
+        <!-- FOOTER -->
+
+        <div class="footer">
+
+            <span>
+                made with
+                <span class="heart">
+                    ♡
+                </span>
+            </span>
+
+            <span>
+
+                ©
+
+                <span id="year"></span>
+
+                Anaisha
+
+            </span>
+
+        </div>
+
+
+    </section>
+
+</main>
+
+
+<!-- =========================================================
+     MUSIC
+========================================================= -->
+
+<audio
+    id="music"
+    loop
+>
+
+    <source
+        src="music.mp3"
+        type="audio/mpeg"
+    >
+
+</audio>
+
+
+<button
+    id="music-button"
+    class="music-button"
+>
+
+    <i class="fa-solid fa-volume-xmark"></i>
+
+</button>
+
+
+<!-- PARTICLES -->
+
+<div id="particles"></div>
+
+
+<!-- =========================================================
+     SCRIPT
+========================================================= -->
+
+<script src="script.js"></script>
+
+
+<script>
+
+    /*
+     * Check whether OAuth returned successfully.
+     */
+
+    const params = new URLSearchParams(
+        window.location.search
+    );
+
+    if (params.get("discord") === "connected") {
+
+        const button =
+            document.getElementById("discord-button");
+
+        const text =
+            document.getElementById("discord-text");
+
+        const status =
+            document.getElementById("discord-status");
+
+
+        text.textContent =
+            "its.anaishaa ♡";
+
+
+        status.style.display =
+            "block";
+
+
+        /*
+         * Remove ?discord=connected
+         * from the URL.
+         */
+
+        window.history.replaceState(
+            {},
+            document.title,
+            window.location.pathname
+        );
+
+    }
+
+
+    /*
+     * Current year
+     */
+
+    document.getElementById("year").textContent =
+        new Date().getFullYear();
+
+</script>
+
 
 </body>
+
 </html>
