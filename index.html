@@ -1,394 +1,203 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-
     <meta charset="UTF-8">
-
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>♡ Anaisha</title>
 
-    <link rel="stylesheet"
-          href="style.css">
+    <link rel="stylesheet" href="style.css">
 
-    <link rel="preconnect"
-          href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-    <link rel="preconnect"
-          href="https://fonts.gstatic.com"
-          crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+        rel="stylesheet"
+    >
 
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
-          rel="stylesheet">
-
-    <link rel="stylesheet"
-          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    >
 </head>
-
 
 <body>
 
+    <!-- Background -->
+    <div class="background"></div>
+    <div class="background-blur"></div>
+    <div class="noise"></div>
 
-<!-- =========================================================
-     BACKGROUND
-========================================================= -->
+    <!-- Particles -->
+    <div id="particles"></div>
 
-<div class="background"></div>
+    <!-- Enter screen -->
+    <div id="enter-screen">
+        <div class="enter-box">
 
-<div class="overlay"></div>
+            <div class="enter-symbol">♡</div>
 
+            <h1>click to enter</h1>
 
-<!-- =========================================================
-     ENTER SCREEN
-========================================================= -->
+            <p>୨ৎ welcome to my little world</p>
 
-<div id="enter-screen">
+            <div class="enter-line"></div>
 
-    <div class="enter-content">
+            <span>enter</span>
 
-        <div class="enter-icon">
-            ♡
         </div>
-
-        <h1>
-            click to enter
-        </h1>
-
-        <p>
-            ♡ welcome to my profile
-        </p>
-
     </div>
 
-</div>
+    <!-- Main -->
+    <main class="page">
 
+        <section class="profile-card">
 
-<!-- =========================================================
-     MAIN PROFILE
-========================================================= -->
+            <!-- Top glow -->
+            <div class="card-glow"></div>
 
-<main class="page">
+            <!-- Avatar -->
+            <div class="avatar-area">
 
+                <div class="avatar-ring">
+                    <img
+                        src="avatar.gif"
+                        alt="Anaisha"
+                        class="avatar"
+                    >
+                </div>
 
-    <section class="profile-card">
+                <div class="online-dot"></div>
 
+            </div>
 
-        <!-- AVATAR -->
+            <!-- Name -->
+            <h1 class="username">
+                ~ ♡ Anaisha ﹒‹𝟹
+            </h1>
 
-        <div class="avatar-wrapper">
+            <div class="handle">
+                @its.anaisha
+            </div>
 
-            <img
-                src="avatar.gif"
-                alt="Anaisha"
-                class="avatar"
-            >
+            <!-- Bio -->
+            <div class="bio">
 
-            <div class="online-dot"></div>
+                <p>୨ৎ not everyone's cup of tea</p>
+                <p>♡ creating my own little world</p>
 
-        </div>
+            </div>
 
+            <!-- Location -->
+            <div class="location">
+                <i class="fa-solid fa-location-dot"></i>
+                <span>India</span>
+            </div>
 
-        <!-- NAME -->
+            <!-- Socials -->
+            <div class="socials">
 
-        <h1 class="username">
-            ~ ♡ Anaisha ﹒‹𝟹
-        </h1>
-
-
-        <!-- HANDLE -->
-
-        <p class="handle">
-            @its.anaisha
-        </p>
-
-
-        <!-- BIO -->
-
-        <div class="bio">
-
-            <p>
-                ୨ৎ not everyone's cup of tea
-            </p>
-
-            <p>
-                ♡ creating my own little world
-            </p>
-
-        </div>
-
-
-        <!-- LOCATION -->
-
-        <div class="location">
-
-            <i class="fa-solid fa-location-dot"></i>
-
-            India
-
-        </div>
-
-
-        <!-- =================================================
-             SOCIALS
-        ================================================== -->
-
-        <div class="socials">
-
-
-            <!-- DISCORD OAUTH -->
-
-            <a
-                href="https://anaisha-discord-auth.onrender.com/login"
-                class="social discord"
-                id="discord-button"
-            >
-
-                <i class="fa-brands fa-discord"></i>
-
-                <span id="discord-text">
-                    Connect Discord
-                </span>
-
-            </a>
-
-
-            <!-- ROBLOX -->
-
-            <a
-                href="https://www.roblox.com/"
-                target="_blank"
-                class="social roblox"
-            >
-
-                <i class="fa-solid fa-gamepad"></i>
-
-                <span>
-                    Roblox
-                </span>
-
-            </a>
-
-
-            <!-- GITHUB -->
-
-            <a
-                href="#"
-                class="social"
-            >
-
-                <i class="fa-brands fa-github"></i>
-
-                <span>
-                    GitHub
-                </span>
-
-            </a>
-
-
-        </div>
-
-
-        <!-- =================================================
-             DISCORD STATUS
-        ================================================== -->
-
-        <div
-            id="discord-status"
-            style="
-                display:none;
-                margin-top:12px;
-                font-size:13px;
-                opacity:0.8;
-            "
-        >
-
-            ♡ Discord connected
-
-        </div>
-
-
-        <!-- =================================================
-             STATS
-        ================================================== -->
-
-        <div class="stats">
-
-
-            <div class="stat">
-
-                <span
-                    class="stat-number"
-                    id="views"
+                <a
+                    href="https://anaisha-discord-auth.onrender.com/login"
+                    class="social discord"
+                    id="discord-button"
                 >
-                    0
+                    <i class="fa-brands fa-discord"></i>
+                    <span id="discord-text">Connect Discord</span>
+                </a>
+
+                <a
+                    href="https://www.roblox.com/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="social roblox"
+                >
+                    <i class="fa-solid fa-gamepad"></i>
+                    <span>Roblox</span>
+                </a>
+
+                <a
+                    href="https://github.com/VoidKii"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="social github"
+                >
+                    <i class="fa-brands fa-github"></i>
+                    <span>GitHub</span>
+                </a>
+
+            </div>
+
+            <!-- Discord connected -->
+            <div id="discord-status">
+                ♡ Discord connected
+            </div>
+
+            <!-- Website -->
+            <a
+                href="https://anaisha.pages.dev/"
+                class="website-link"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                <i class="fa-solid fa-link"></i>
+                anaisha.pages.dev
+            </a>
+
+            <!-- Stats -->
+            <div class="stats">
+
+                <div class="stat">
+                    <strong id="views">0</strong>
+                    <span>Views</span>
+                </div>
+
+                <div class="stat">
+                    <strong>♡</strong>
+                    <span>Status</span>
+                </div>
+
+                <div class="stat">
+                    <strong>14</strong>
+                    <span>UID</span>
+                </div>
+
+            </div>
+
+            <div class="divider"></div>
+
+            <!-- Footer -->
+            <div class="footer">
+
+                <span>
+                    made with <span class="heart">♡</span>
                 </span>
 
-                <span class="stat-label">
-                    Views
+                <span>
+                    © <span id="year"></span> Anaisha
                 </span>
 
             </div>
 
+        </section>
 
-            <div class="stat">
+    </main>
 
-                <span class="stat-number">
-                    ♡
-                </span>
+    <!-- Music -->
+    <audio id="music" loop>
+        <source src="music.mp3" type="audio/mpeg">
+    </audio>
 
-                <span class="stat-label">
-                    Status
-                </span>
-
-            </div>
-
-
-            <div class="stat">
-
-                <span class="stat-number">
-                    14
-                </span>
-
-                <span class="stat-label">
-                    UID
-                </span>
-
-            </div>
-
-
-        </div>
-
-
-        <!-- DIVIDER -->
-
-        <div class="divider"></div>
-
-
-        <!-- FOOTER -->
-
-        <div class="footer">
-
-            <span>
-                made with
-                <span class="heart">
-                    ♡
-                </span>
-            </span>
-
-            <span>
-
-                ©
-
-                <span id="year"></span>
-
-                Anaisha
-
-            </span>
-
-        </div>
-
-
-    </section>
-
-</main>
-
-
-<!-- =========================================================
-     MUSIC
-========================================================= -->
-
-<audio
-    id="music"
-    loop
->
-
-    <source
-        src="music.mp3"
-        type="audio/mpeg"
+    <button
+        id="music-button"
+        class="music-button"
+        aria-label="Toggle music"
     >
+        <i class="fa-solid fa-volume-xmark"></i>
+    </button>
 
-</audio>
-
-
-<button
-    id="music-button"
-    class="music-button"
->
-
-    <i class="fa-solid fa-volume-xmark"></i>
-
-</button>
-
-
-<!-- PARTICLES -->
-
-<div id="particles"></div>
-
-
-<!-- =========================================================
-     SCRIPT
-========================================================= -->
-
-<script src="script.js"></script>
-
-
-<script>
-
-    /*
-     * Check whether OAuth returned successfully.
-     */
-
-    const params = new URLSearchParams(
-        window.location.search
-    );
-
-    if (params.get("discord") === "connected") {
-
-        const button =
-            document.getElementById("discord-button");
-
-        const text =
-            document.getElementById("discord-text");
-
-        const status =
-            document.getElementById("discord-status");
-
-
-        text.textContent =
-            "its.anaishaa ♡";
-
-
-        status.style.display =
-            "block";
-
-
-        /*
-         * Remove ?discord=connected
-         * from the URL.
-         */
-
-        window.history.replaceState(
-            {},
-            document.title,
-            window.location.pathname
-        );
-
-    }
-
-
-    /*
-     * Current year
-     */
-
-    document.getElementById("year").textContent =
-        new Date().getFullYear();
-
-</script>
-
+    <script src="script.js"></script>
 
 </body>
-
 </html>
